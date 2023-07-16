@@ -15,27 +15,31 @@ export default class SearchScreen extends React.Component {
         this.setState({
             text: text,
             products: [
-                    {desc:'Get this burger for only $3.99 from Food Dlivery app!',id:'1',img:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/1200px-Hamburger_%28black_bg%29.jpg"},
-                    {desc:'Get this burger for only $3.99 from Food Dlivery app!',id:'2',img:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/1200px-Hamburger_%28black_bg%29.jpg"},
-                    {desc:'Get this burger for only $3.99 from Food Dlivery app!',id:'3',img:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/1200px-Hamburger_%28black_bg%29.jpg"},
-                    {desc:'Get this burger for only $3.99 from Food Dlivery app!',id:'4',img:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/1200px-Hamburger_%28black_bg%29.jpg"}
+                    [{desc:'Get this burger for only $3.99 from Food Dlivery app!',id:'1',img:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/1200px-Hamburger_%28black_bg%29.jpg"},
+                    {desc:'Get this burger for only $3.99 from Food Dlivery app!',id:'2',img:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/1200px-Hamburger_%28black_bg%29.jpg"}],
+                    [{desc:'Get this burger for only $3.99 from Food Dlivery app!',id:'3',img:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/1200px-Hamburger_%28black_bg%29.jpg"},
+                    {desc:'Get this burger for only $3.99 from Food Dlivery app!',id:'4',img:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/1200px-Hamburger_%28black_bg%29.jpg"}],
+                    [{desc:'Get this burger for only $3.99 from Food Dlivery app!',id:'3',img:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/1200px-Hamburger_%28black_bg%29.jpg"},
+                    {desc:'Get this burger for only $3.99 from Food Dlivery app!',id:'4',img:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/1200px-Hamburger_%28black_bg%29.jpg"}],
+                    [{desc:'Get this burger for only $3.99 from Food Dlivery app!',id:'3',img:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/1200px-Hamburger_%28black_bg%29.jpg"},
+                    {desc:'Get this burger for only $3.99 from Food Dlivery app!',id:'4',img:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/1200px-Hamburger_%28black_bg%29.jpg"}]
             ]
         })
     }
     render(){
         return(
-            <View>
+            <View style={{paddingBottom: '12%'}}>
                 <SearchBar
                     value={this.state.text}
                     onValueChange={this.valueChanged}
                     withCancel
                     animated
                 />
-                <ScrollView style={styles.container}>
+                <ScrollView>
                 
                     {
                         this.state.products.map(
-                            x=>{console.log(this.state.products);return (<Product key={x.id} desc={x.desc} img={x.img} />)}
+                            x=> (<ScrollView horizontal>{x.map(i=><Product key={i.id} desc={i.desc} img={i.img} />)}</ScrollView>)
                         )
                     }
                 
@@ -45,9 +49,3 @@ export default class SearchScreen extends React.Component {
         )
     }
 }
-const styles= StyleSheet.create({
-    container:{
-        flex: 1,
-        backgroundColor: "#000"
-    },
-})

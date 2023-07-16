@@ -17,7 +17,7 @@ export default class HomeScreen extends React.Component{
         return (<ScrollView style={styles.container}>
             <TableView header="Suggested">
                 <ScrollView horizontal style={styles.suggested}>
-                    <Product desc={"Get this burger for only $3.99 from Food Delivery app!"} img="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/1200px-Hamburger_%28black_bg%29.jpg"/>
+                    <Product desc={"Get this burger for only $3.99 from Food Delivery app!"} img="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/1200px-Hamburger_%28black_bg%29.jpg" />
                     <Product desc={"Get this burger for only $3.99 from Food Delivery app!"} img="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/1200px-Hamburger_%28black_bg%29.jpg"/>
                 </ScrollView>
             </TableView>

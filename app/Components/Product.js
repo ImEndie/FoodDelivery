@@ -19,12 +19,11 @@ export default class Product extends React.Component{
                 <Image
                     style={styles.image}
                     source={this.props.img}
-                    placeholder={"blurhash"}
                     contentFit="cover"
                     transition={1000}
                 />
                 <Text style={{padding: 7,fontStyle: 'italic', color: 'gray'}}>{this.props.desc}</Text>
-                <NavigationRow title="Details" info="" theme={{barColor: 'white', dividerColor: "white"}}/>
+                <NavigationRow title={this.props.checkout?"Checkout":"Details"} info="" theme={{barColor: 'white', dividerColor: "white"}}/>
                 
                 
             </View>
